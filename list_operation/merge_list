@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 # compiled by Tonyprc
 
-''' read two wordlists and extract their mutual words
-    to a new list if there exists any.'''
+''' Read two wordlists and extract their mutual words
+    to a new list if there exists any.
+    The famous wordlists of General Service List (GSL) 
+    and Academic Word List (AWL) are used here
+    solely as an example.'''
     
 import os
 

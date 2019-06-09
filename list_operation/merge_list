@@ -8,7 +8,7 @@
     and Academic Word List (AWL) are used here
     solely as an example.'''
 
-''' 读取两列表并从中提取共有词汇，样例词汇表分别为GSL与AWL。‘’‘
+''' 读取两列表并从中提取共有词汇，样例词汇表分别为GSL与AWL。'''
     
 import os
 

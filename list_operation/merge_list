@@ -2,13 +2,12 @@
 # -*- coding: utf-8 -*-
 # compiled by Tonyprc
 
-''' Read two wordlists and extract their mutual words
+''' 读取两列表并从中提取共有词汇，样例词汇表分别为GSL与AWL。
+    Read two wordlists and extract their mutual words
     to a new list if there exists any.
     The famous wordlists of General Service List (GSL) 
     and Academic Word List (AWL) are used here
-    solely as an example.'''
-
-''' 读取两列表并从中提取共有词汇，样例词汇表分别为GSL与AWL。'''
+    solely as an example.  '''
     
 import os
 
@@ -38,10 +37,9 @@ if __name__ == '__main__':
     list1,list2=load_file(wrdlist1,wrdlist2)
     mutual_wrdlist=get_mutual(list1,list2)
     if mutual_wrdlist:
-        print(f'{len(mutual_wrdlist)} words found in both {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}: \n')
-        print(f'在{wrdlist1.split(".")[0]}与{wrdlist2.split(".")[0]}两列表中共找到{len(mutual_wrdlist)}个共有词汇： \n')
+        print(f'在{wrdlist1.split(".")[0]}与{wrdlist2.split(".")[0]}两列表中共找到{len(mutual_wrdlist)}个共有词汇：')
+        print(f'{len(mutual_wrdlist)} words found in both {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}: \n')        
         print('\n'.join(mutual_wrdlist))
     else:
-        print(f'{No mutual words found in {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}: \n')
-        print(f'未发现{wrdlist1.split(".")[0]}与{wrdlist2.split(".")[0]}两列表之间存在共有词汇。 \n')
-        print(f'No mutual word found in both {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}')
+        print(f'未发现{wrdlist1.split(".")[0]}与{wrdlist2.split(".")[0]}两列表之间存在共有词汇。')
+        print(f'No mutual word found in {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}')

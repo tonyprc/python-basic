@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+# compiled by Tonyprc
+
+''' read two wordlists and extract their mutual words
+    to a new list if there exists any.'''
+    
+import os
+
+def load_file(text1,text2):
+    data_dir = os.path.join(os.getcwd(), 'app_data')
+    file1 = os.path.join(data_dir, text1)
+    file2 = os.path.join(data_dir, text2)    
+    def get_list(file):
+        if os.path.isfile(file):
+            with open(file, 'r', encoding='utf-8-sig') as f:
+                wd_list=[line.strip() for line in f.readlines()]
+                return wd_list
+    list1=get_list(file1)
+    list2=get_list(file2)        
+    return list1,list2 
+    
+def get_mutual(list_1,list_2):
+    try:
+        mutual_list=set(list_1).intersection(set(list_2))
+    except:
+        mutual_list=[]
+    return mutual_list
+
+if __name__ == '__main__':
+    wrdlist1='awl_wordlist.txt'
+    wrdlist2='gsl_wordlist.txt'
+    list1,list2=load_file(wrdlist1,wrdlist2)
+    mutual_wrdlist=get_mutual(list1,list2)
+    if mutual_wrdlist:
+        print(f'{len(mutual_wrdlist)} words found in both {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}: \n')
+        print('\n'.join(mutual_wrdlist))
+    else:
+        print(f'No mutual word found in both {wrdlist1.split(".")[0]} and {wrdlist2.split(".")[0]}')
